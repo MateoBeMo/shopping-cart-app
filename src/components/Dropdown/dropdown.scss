@@ -1,0 +1,70 @@
+@import "../../styles/styles-utils.scss";
+
+.dropdown__wrapper {
+    @include themify($themes) {
+        color: themed("textColorBase");
+    }
+    width: 100%;
+    user-select: none;
+    .dropDown__button__wrapper {
+        display: flex;
+        position: relative;
+        height: 100%;
+        .dropdown__button {
+            @include themify($themes) {
+                color: themed("textColorBase");
+                background-color: themed("bodyBackgroundColor");
+            }
+            cursor: pointer;
+            -webkit-appearance: none;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            height: calc(1.5em + 0.5rem + 2px);
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            border-radius: 0.2rem;
+            width: 100%;
+            span {
+                vertical-align: middle;
+            }
+            img {
+                vertical-align: middle;
+                margin-right: 0.5em;
+            }
+        }
+        .dropdown__arrow {
+            font-size: 8px !important;
+            position: absolute;
+            top: 12px;
+            right: 20px;
+        }
+    }
+
+    .dropdown__list {
+        width: 100%;
+        margin-top: 0px;
+        padding: 0.25rem 0rem 0.25rem 0rem;
+        z-index: 3;
+
+        li {
+            width: 100%;
+            list-style-type: none;
+            padding: 4px;
+            @include themify($themes) {
+                color: themed("textColorBase");
+                background-color: themed("bodyBackgroundColor");
+            }
+            &:hover {
+                @include themify($themes) {
+                    color: themed("textColorBase");
+                    background-color: themed("switcher");
+                }
+                cursor: pointer;
+            }
+            img {
+                margin: 0 4px 0 4px;
+                padding: 0 4px 0 4px;
+            }
+        }
+    }
+}

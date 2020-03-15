@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Switcher> Snapshot renders => it should rendered with the provided props 1`] = `
+<div>
+  <div
+    class="switcher switcher__wrapper"
+  >
+    <label
+      aria-label="switcher-test"
+      class="switcher__switch"
+      for="switcher-test"
+    >
+      <input
+        checked=""
+        data-testid="switcher__input__checkbox-test"
+        id="switcher-test"
+        type="checkbox"
+      />
+      <div
+        class="switcher__slider switcher__round"
+      />
+    </label>
+  </div>
+</div>
+`;

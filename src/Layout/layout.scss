@@ -1,0 +1,99 @@
+@import 'styles/styles-utils.scss';
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    @include themify($themes) {
+        background-color: themed('bodyBackgroundColor');
+        color: themed('textColorBase');
+    }
+    .layout__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .layout__content {
+            width: 100%;
+            height: calc(100vh - 128px);
+        }
+    }
+    .layout__header,
+    .layout__footer {
+        height: 64px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        z-index: 2;
+    }
+    .layout__header {
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16), 0 3px 4px 0 rgba(0, 0, 0, 0.18), 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding: 24px;
+        .dropdown__wrapper {
+            width: 150px;
+            height: 40px;
+            .dropDown__button__wrapper {
+                height: inherit;
+            }
+            .dropdown__list {
+                font-size: 14px;
+            }
+        }
+        .layout__header-title {
+            position: absolute;
+            left: 40%;
+            @media only screen and (max-width: 480px) {
+                position: static;            }
+        }
+        button {
+            height: 40px;
+            align-self: center;
+        }
+        .layout__header-cart {
+            cursor: pointer;
+            position: relative;
+            visibility: hidden;
+            @media only screen and (max-width: 768px) {
+                visibility: visible;
+            }
+            &--hidden {
+                visibility: hidden;
+            }
+            .layout__badget {
+                position: absolute;
+                left: 95%;
+                top: -8px;
+                font-size: 14px;
+                padding: 2px 6px;
+                border-radius: 1em;
+                background-color: $color-primary;
+            }
+        }
+
+        .layout__go-back {
+            visibility: visible;
+            width: inherit;
+            padding: 0 16px;
+            border-radius: 2em;
+            &--hidden {
+                visibility: hidden;
+                width: 0px;
+            }
+        }
+    }
+
+    .layout__footer {
+        box-shadow: 0 -3px 3px 0 rgba(0, 0, 0, 0.16), 0 -3px 4px 0 rgba(0, 0, 0, 0.18), 0 -1px 8px 0 rgba(0, 0, 0, 0.2);
+        .layout__footer-theme-selector {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 24px;
+            span {
+                margin-left: 8px;
+            }
+        }
+    }
+}

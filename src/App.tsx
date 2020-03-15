@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+/**Components */
+import { Routes } from './routes/Routes';
+/**Style */
+import 'styles/main.scss';
+/** Utils */
+import { registerIcons } from 'utils/fontAwesomeIcons';
+/** GlobalState */
+import { StoreProvider } from 'store/storeProvider';
+
+registerIcons();
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter basename="/">
+            <StoreProvider>
+                <Routes />
+            </StoreProvider>
+        </BrowserRouter>
+    );
 }
 
 export default App;

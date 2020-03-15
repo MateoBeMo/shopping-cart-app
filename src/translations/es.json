@@ -1,0 +1,22 @@
+{
+  "app.components.Dropdown.Language.English": "Inglés",
+  "app.components.Dropdown.Language.Spanish": "Español",
+  "app.components.Dropdown.List.EmptyTitle": "La lista está vacía",
+  "app.containers.Layout.ChangeTheme": "Cambiar tema",
+  "app.containers.Layout.Footer": "Pie",
+  "app.containers.Layout.Header": "Cabecera",
+  "app.containers.Layout.Logout": "Cerrar sesión",
+  "app.pages.HomePage.EditApp": "Edita src/App.js y guarda para recargar.",
+  "app.pages.HomePage.LearnReact": "Aprende React",
+  "app.pages.HomePage.containers.GetStarted.Description": "Una librería de Javascript para crear interfaces de usuario",
+  "app.pages.HomePage.containers.GetStarted.GetStarted": "Empezar",
+  "app.pages.HomePage.containers.GetStarted.TakeTutorial": "Tomar un Tutorial",
+  "app.pages.LoginPage.Enter": "Iniciar Sesión",
+  "app.pages.LoginPage.Password": "Contraseña",
+  "app.pages.LoginPage.PleaseWait": "Por favor espere...",
+  "app.pages.LoginPage.RequiredField": "Campo requerido",
+  "app.pages.LoginPage.Success": "Exito",
+  "app.pages.LoginPage.Title": "Iniciar Sesión",
+  "app.pages.LoginPage.User": "Usuario",
+  "app.pages.LoginPage.WrongPassword": "Usuario y/o contraseña incorrectos."
+}

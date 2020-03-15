@@ -1,0 +1,26 @@
+/*
+ * Theme definitions
+ */
+
+$themes: (
+    light: (
+        bodyBackgroundColor: $color-background-light-2,
+        alertColor: $color-system-feedback-error,
+        warningColor: $color-system-feedback-warning,
+        textColorBase: $color-text-black-base,
+        textColorWeaker: $color-text-black-brighter-1,
+        textColorWeakest: $color-text-black-brighter-2,
+        switcher: $color-primary,
+        switcherCircle: $color-background-dark-1,
+    ),
+    dark: (
+        bodyBackgroundColor: $color-background-dark-4,
+        alertColor: $color-system-feedback-error,
+        warningColor: $color-system-feedback-warning,
+        textColorBase: $color-text-white-base,
+        textColorWeaker: $color-text-white-darker-1,
+        textColorWeakest: $color-text-white-darker-2,
+        switcher: $color-primary,
+        switcherCircle: $color-background-light-1,
+    ),
+);

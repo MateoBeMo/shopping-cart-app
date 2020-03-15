@@ -1,0 +1,16 @@
+// Text utils
+
+
+
+
+.font-color-primary{
+    @include themify($themes) {
+        color: themed('textColor');
+      }
+}
+
+.font-color-secondary{
+    @include themify($themes) {
+        color: themed('textColorSecondary');
+      }
+}

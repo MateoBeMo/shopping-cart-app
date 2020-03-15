@@ -1,0 +1,15 @@
+// STYLES UTILS to import inside any Component or Module .scss if you need it
+
+// SETTINGS variables and configurations.
+@import "settings/tokens";
+
+// THEMES, styles for theming our application
+@import "themes/flowable-theme.scss";
+
+// UTILS functions, mixins and other helpers.
+@import "utils/functions";
+@import "utils/mixins";
+
+
+
+

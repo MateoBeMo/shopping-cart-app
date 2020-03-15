@@ -1,0 +1,11 @@
+@import 'styles/styles-utils.scss';
+.button {
+    background-color: $color-primary;
+    padding: 8px;
+    border-radius: 1em;
+    border: none;
+    @include themify($themes) {
+        color: themed('textColorBase');
+    }
+    cursor: pointer;
+}

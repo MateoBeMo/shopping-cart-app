@@ -1,0 +1,22 @@
+{
+  "app.components.Dropdown.Language.English": "Inglés",
+  "app.components.Dropdown.Language.Spanish": "Español",
+  "app.components.Dropdown.List.EmptyTitle": "La lista está vacía",
+  "app.containers.Layout.ChangeTheme": "Change theme",
+  "app.containers.Layout.Footer": "Footer",
+  "app.containers.Layout.Header": "Header",
+  "app.containers.Layout.Logout": "Log Out",
+  "app.pages.HomePage.EditApp": "Edit src/App.js and save to reload.",
+  "app.pages.HomePage.LearnReact": "Learn React",
+  "app.pages.HomePage.containers.GetStarted.Description": "A JavaScript library for building user interfaces.",
+  "app.pages.HomePage.containers.GetStarted.GetStarted": "Get Started",
+  "app.pages.HomePage.containers.GetStarted.TakeTutorial": "Take Tutorial",
+  "app.pages.LoginPage.Enter": "Log In",
+  "app.pages.LoginPage.Password": "Password",
+  "app.pages.LoginPage.PleaseWait": "Please wait...",
+  "app.pages.LoginPage.RequiredField": "Required field",
+  "app.pages.LoginPage.Success": "Success",
+  "app.pages.LoginPage.Title": "Log In",
+  "app.pages.LoginPage.User": "Username",
+  "app.pages.LoginPage.WrongPassword": "Wrong username and/or password."
+}
