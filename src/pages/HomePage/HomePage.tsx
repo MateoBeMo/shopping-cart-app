@@ -4,7 +4,7 @@ import ProductList from './components/ProductList/ProductList';
 import Sidebar from './components/Sidebar';
 import { useStore } from 'store/storeProvider';
 import { addProduct } from 'store/globalSlider';
-import { ProductModel } from '../../models/product.model';
+import { ProductModel } from 'models/product.model';
 
 const HomePage: React.FC<RouteComponentProps> = () => {
     const [resfreshProducts, setRefreshProducts] = useState<boolean>(false);

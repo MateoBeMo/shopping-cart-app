@@ -3,8 +3,8 @@ import ProductCard from 'components/ProductCard';
 import Skeleton from 'components/ProductCard/Skeleton';
 import Switcher from 'components/Switcher';
 import { pageLimit } from 'utils/const';
-import { getAllProducts, toogleFavoriteProduct, getFavoriteProducts } from '../../../../services/product.service';
-import { ProductModel } from '../../../../models/product.model';
+import { getAllProducts, toogleFavoriteProduct, getFavoriteProducts } from 'services/product.service';
+import { ProductModel } from 'models/product.model';
 import '../../homePage.scss';
 
 const useGetProducts = (pageNumber: number, favoriteChecked: boolean, resfreshProducts: boolean) => {
