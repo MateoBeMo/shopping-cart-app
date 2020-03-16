@@ -5,6 +5,7 @@
 $themes: (
     light: (
         bodyBackgroundColor: $color-background-light-2,
+        headerFooterColor: $color-layout-elements-light,
         alertColor: $color-system-feedback-error,
         warningColor: $color-system-feedback-warning,
         textColorBase: $color-text-black-base,
@@ -15,6 +16,7 @@ $themes: (
     ),
     dark: (
         bodyBackgroundColor: $color-background-dark-4,
+        headerFooterColor: $color-layout-elements-dark,
         alertColor: $color-system-feedback-error,
         warningColor: $color-system-feedback-warning,
         textColorBase: $color-text-white-base,

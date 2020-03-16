@@ -63,7 +63,10 @@
             display: flex;
             justify-content: space-between;
             span {
-                color: gray;
+                @include themify($themes) {
+                    color: themed('textColorWeaker');
+                }
+
             }
             .productCard__button {
                 cursor: pointer;

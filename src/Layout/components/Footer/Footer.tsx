@@ -8,10 +8,10 @@ import { changeTheme } from 'store/globalStore';
 import { useStore } from 'store/storeProvider';
 
 const Footer = () => {
-    const { dispatch } = useStore();
+    const { state, dispatch } = useStore();
     useEffect(() => {
-        dispatch(changeTheme(themes.lightTheme));
-    }, [dispatch]);
+            dispatch(changeTheme(state.theme || themes.lightTheme));
+    }, [state.theme, dispatch]);
     const [checked, setChecked] = useState(false);
 
     const toggleTheme = () => {

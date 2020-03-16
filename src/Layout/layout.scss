@@ -24,7 +24,9 @@
         display: flex;
         align-items: center;
         z-index: 2;
-        background-color: #e6eedd;
+        @include themify($themes) {
+            background-color: themed('headerFooterColor');
+        }
         // color: #666;
     }
     .layout__header {

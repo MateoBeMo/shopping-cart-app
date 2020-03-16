@@ -1,6 +1,7 @@
 import { produce } from 'immer';
 import { ProductModel } from 'models/product.model';
 import { getProductsStorage, setProductsStorage, removeProductsStorage } from 'utils/localStorageHelpers';
+import { themes } from 'utils/const';
 
 /** Constants */
 const ADD_PRODUCT = 'ADD_PRODUCT';
@@ -60,7 +61,7 @@ export const changeTheme = (theme: string) => {
 
 /** Initial State */
 export const initialState: globalState = {
-    theme: 'dark',
+    theme: themes.lightTheme,
     language: 'en',
     cartProducts: getProductsStorage() || [],
 };
