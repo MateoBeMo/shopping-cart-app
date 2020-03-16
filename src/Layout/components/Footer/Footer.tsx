@@ -4,7 +4,7 @@ import Switcher from 'components/Switcher';
 /**Utils */
 import { themes } from 'utils/const';
 /** Global State */
-import { changeTheme } from 'store/globalSlider';
+import { changeTheme } from 'store/globalStore';
 import { useStore } from 'store/storeProvider';
 
 const Footer = () => {
@@ -27,7 +27,7 @@ const Footer = () => {
             <div className="layout__footer-theme-selector">
                 <Switcher onChange={toggleTheme} checked={checked} switcherName="theme-switcher" />
                 <span>
-                    CAMBIAR TEMA
+                    CHANGE THEME
                 </span>
             </div>
         </div>

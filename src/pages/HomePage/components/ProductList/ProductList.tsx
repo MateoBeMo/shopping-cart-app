@@ -98,24 +98,13 @@ const ProductList = ({ handleSelected, resfreshProducts }: ProductListProps) => 
                     checked={favoriteChecked}
                     switcherName="favorite-switcher"
                 />
-                <span>Filter By Favorite Products</span>
+                <span>Filter By Favourite Products</span>
             </div>
             <div className="productList__products">
                 {Array.isArray(products) &&
                     products.map((product, index) => {
-                        if (products.length === index + 1) {
-                            return (
-                                <div ref={lastProductRef} key={product.id}>
-                                    <ProductCard
-                                        {...product}
-                                        onSelected={() => handleSelected(product)}
-                                        toggleFavorite={() => handleToogleFavorite(product)}
-                                    />
-                                </div>
-                            );
-                        }
                         return (
-                            <div key={product.id}>
+                            <div key={product.id} ref={products.length === index + 1 ? lastProductRef : undefined}>
                                 <ProductCard
                                     {...product}
                                     onSelected={() => handleSelected(product)}

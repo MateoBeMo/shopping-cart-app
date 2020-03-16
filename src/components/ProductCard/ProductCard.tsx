@@ -3,7 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 /**Components */
-
+import Button from 'components/Button';
 /**Styles */
 import './productCard.scss';
 
@@ -36,7 +36,7 @@ const ProductCard = ({
         <div className="productCard productCard__wrapper">
             <div className="productCard__header">
                 <img className="productCard__image" src={image_url} alt={productName} />
-                <span className={favoriteClass} onClick={toggleFavorite}>
+                <span className={favoriteClass} onClick={toggleFavorite} data-testid="heart-icon">
                     <FontAwesomeIcon icon="heart" />
                 </span>
             </div>
@@ -45,12 +45,12 @@ const ProductCard = ({
                     <span>{productName}</span>
                     <span>{price}$</span>
                 </div>
-                <div className="productCard__description">{productDescription}</div>
+                <div className="productCard__description" title={productDescription}>{productDescription}</div>
                 <div className="productCard__footer">
                     <span>{stock} left</span>
-                    <button className={addProductClass} onClick={onSelected} disabled={stock === 0}>
-                        <FontAwesomeIcon icon="plus" /> Add
-                    </button>
+                    <Button className={addProductClass} onClick={onSelected} disabled={stock === 0}>
+                        <FontAwesomeIcon icon="plus" />
+                    </Button>
                 </div>
             </div>
         </div>

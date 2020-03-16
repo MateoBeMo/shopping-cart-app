@@ -5,52 +5,53 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/Button';
 /**Styles */
 import './cart.scss';
-import { ProductModel, CartProductModel } from 'models/product.model';
-
+import { ProductModel } from 'models/product.model';
 
 type CartProps = {
     products: ProductModel[];
     handleRemoveItem: (product: ProductModel) => void;
-    handleCheckout: (products: CartProductModel[]) => void
+    handleUpdateItem: (product: ProductModel) => void;
+    handleCheckout: (products: ProductModel[]) => void;
 };
 
-const Cart = ({ products, handleRemoveItem, handleCheckout }: CartProps) => {
-    const [cartProducts, setCartProducts] = useState<CartProductModel[]>([]);
+const Cart = ({ products, handleRemoveItem, handleCheckout, handleUpdateItem }: CartProps) => {
+    const [cartProducts, setCartProducts] = useState<ProductModel[]>([]);
     const [totalPrice, setTotalPrice] = useState<number>(0);
 
     useEffect(() => {
-        setCartProducts(products.map(obj => ({ ...obj, total: 1 })));
+        setCartProducts(products.map(obj => ({ ...obj, total: obj.total || 1 })));
     }, [products]);
 
     useEffect(() => {
         setTotalPrice(
             cartProducts.reduce((totalPrice, product) => {
-                const totalProduct = product.price * product.total;
+                const totalProduct = product.price * (product.total || 1);
                 totalPrice += totalProduct;
                 return totalPrice;
             }, 0),
         );
     }, [cartProducts]);
 
-    const addOneProduct = (product: CartProductModel) => {
-        if (product.stock > product.total) {
+    const addOneProduct = (product: ProductModel) => {
+        if (product.total && product.stock > product.total) {
             product.total += 1;
+            handleUpdateItem(product);
             setCartProducts(prevCartProducts => [...prevCartProducts]);
         }
     };
-    const removeOneProduct = (product: CartProductModel) => {
-        if (product.total > 1) {
+    const removeOneProduct = (product: ProductModel) => {
+        if (product.total && product.total > 1) {
             product.total -= 1;
+            handleUpdateItem(product);
             setCartProducts(prevCartProducts => [...prevCartProducts]);
         } else {
-            delete product.total;
             handleRemoveItem(product);
         }
     };
     const checkout = () => {
         handleCheckout(cartProducts);
         setCartProducts([]);
-    }
+    };
     return (
         <div className="cart cart__wrapper">
             <div className="cart__product-list">
@@ -62,9 +63,13 @@ const Cart = ({ products, handleRemoveItem, handleCheckout }: CartProps) => {
                             <div className="cart__title">
                                 <span>{productName}</span>
                                 <div>
-                                    <FontAwesomeIcon icon="minus" onClick={() => removeOneProduct(product)} />
+                                    <span data-testid="minus-icon" onClick={() => removeOneProduct(product)}>
+                                        <FontAwesomeIcon icon="minus" />
+                                    </span>
                                     <span className="cart__total"> {total} </span>
-                                    <FontAwesomeIcon icon="plus" onClick={() => addOneProduct(product)} />
+                                    <span data-testid="plus-icon" onClick={() => addOneProduct(product)}>
+                                        <FontAwesomeIcon icon="plus" />
+                                    </span>
                                 </div>
                             </div>
                             <div className="cart__price">

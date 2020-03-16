@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductCard> Snapshot renders => it should rendered with the provided props 1`] = `
+<div>
+  <div
+    class="productCard productCard__wrapper"
+  >
+    <div
+      class="productCard__header"
+    >
+      <img
+        alt="Gorgeous Frozen Chair"
+        class="productCard__image"
+        src="https://dummyimage.com/400x400/bc27b5/000&text=Gorgeous Frozen Chair"
+      />
+      <span
+        class="productCard__favorite productCard__favorite--red"
+        data-testid="heart-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-heart fa-w-16 "
+          data-icon="heart"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class="productCard__content"
+    >
+      <div
+        class="productCard__title"
+      >
+        <span>
+          Gorgeous Frozen Chair
+        </span>
+        <span>
+          47
+          $
+        </span>
+      </div>
+      <div
+        class="productCard__description"
+      >
+        Harum modi sunt. Voluptatem ut molestiae consequatur. Ea omnis architecto laboriosam accusantium reiciendis corporis exercitationem ad dolor. Fugit autem placeat voluptas sint aut aliquam sed. Totam fuga nesciunt rerum voluptatibus. Voluptatibus voluptates vel ut et temporibus perferendis laboriosam accusamus.
+      </div>
+      <div
+        class="productCard__footer"
+      >
+        <span>
+          28
+           left
+        </span>
+        <button
+          class="productCard__button"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-plus fa-w-14 "
+            data-icon="plus"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+              fill="currentColor"
+            />
+          </svg>
+           Add
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

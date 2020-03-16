@@ -3,7 +3,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import ProductList from './components/ProductList/ProductList';
 import Sidebar from './components/Sidebar';
 import { useStore } from 'store/storeProvider';
-import { addProduct } from 'store/globalSlider';
+import { addProduct } from 'store/globalStore';
 import { ProductModel } from 'models/product.model';
 
 const HomePage: React.FC<RouteComponentProps> = () => {

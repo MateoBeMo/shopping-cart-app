@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Cart> Snapshot renders => it should rendered with the provided props 1`] = `
+<div>
+  <div
+    class="cart cart__wrapper"
+  >
+    <div
+      class="cart__product-list"
+    >
+      <div
+        class="cart__product"
+      >
+        <img
+          alt="Gorgeous Frozen Chair"
+          class="cart__image"
+          src="https://dummyimage.com/400x400/bc27b5/000&text=Gorgeous Frozen Chair"
+        />
+        <div
+          class="cart__title"
+        >
+          <span>
+            Gorgeous Frozen Chair
+          </span>
+          <div>
+            <span
+              data-testid="minus-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-minus fa-w-14 "
+                data-icon="minus"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              class="cart__total"
+            >
+               
+              1
+               
+            </span>
+            <span
+              data-testid="plus-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-plus fa-w-14 "
+                data-icon="plus"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="cart__price"
+        >
+          <span>
+            47
+            $
+          </span>
+        </div>
+      </div>
+      <div
+        class="cart__product"
+      >
+        <img
+          alt="Gorgeous Rubber Mouse"
+          class="cart__image"
+          src="https://dummyimage.com/400x400/4b5148/000&text=Gorgeous Rubber Mouse"
+        />
+        <div
+          class="cart__title"
+        >
+          <span>
+            Gorgeous Rubber Mouse
+          </span>
+          <div>
+            <span
+              data-testid="minus-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-minus fa-w-14 "
+                data-icon="minus"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              class="cart__total"
+            >
+               
+              1
+               
+            </span>
+            <span
+              data-testid="plus-icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-plus fa-w-14 "
+                data-icon="plus"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="cart__price"
+        >
+          <span>
+            46
+            $
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="cart__checkout"
+    >
+      <button
+        class=" button"
+        role="button"
+      >
+         CHECKOUT 
+      </button>
+      <span>
+        93
+        $
+      </span>
+    </div>
+  </div>
+</div>
+`;

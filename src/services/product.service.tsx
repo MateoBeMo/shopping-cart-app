@@ -3,15 +3,13 @@ import { pageLimit } from 'utils/const';
 import { ProductModel } from '../models/product.model';
 
 export const getAllProducts = (pageNumber?: number) => {
-    return pageNumber !== undefined
-        ? API.get<ProductModel[]>('/grocery', { params: { _page: pageNumber, _limit: pageLimit } })
-        : API.get<ProductModel[]>('/grocery');
+    const params = pageNumber !== undefined ? { _page: pageNumber, _limit: pageLimit } : {};
+    return API.get<ProductModel[]>('/grocery', { params })
 };
 
 export const getFavoriteProducts = (pageNumber?: number) => {
-    return pageNumber !== undefined
-        ? API.get<ProductModel[]>('/grocery', { params: { favorite: "1", _page: pageNumber, _limit: pageLimit } })
-        : API.get<ProductModel[]>('/grocery', { params: { favorite: "1" } });
+    const params = pageNumber !== undefined ? { favorite: "1", _page: pageNumber, _limit: pageLimit } : { favorite: "1" };
+    return API.get<ProductModel[]>('/grocery', { params });
 };
 
 export const updateItemStock = (product: ProductModel) => {

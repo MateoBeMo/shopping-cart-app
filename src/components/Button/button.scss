@@ -1,5 +1,6 @@
 @import 'styles/styles-utils.scss';
 .button {
+    user-select: none;
     background-color: $color-primary;
     padding: 8px;
     border-radius: 1em;

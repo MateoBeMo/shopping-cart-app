@@ -5,13 +5,13 @@ import './button.scss';
 type ButtonProps = {
     children?: React.ReactNode;
     className?: string;
-    props?: any;
-    onClick?: any;
+    disabled?: boolean;
+    onClick: any;
 };
 
-const Button = ({ children, onClick, className, ...props }: ButtonProps) => {
+const Button = ({ children, className, disabled = false, onClick }: ButtonProps) => {
     return (
-        <button className={`${className} button`} onClick={onClick} {...props}>
+        <button className={`${className ? className : ''} button`} disabled={disabled} onClick={onClick}>
             {children}
         </button>
     );

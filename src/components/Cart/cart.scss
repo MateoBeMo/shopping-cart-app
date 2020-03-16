@@ -21,12 +21,13 @@
             .cart__image {
                 width: 100px;
                 height: 100px;
+                object-fit: cover;
             }
             .cart__title {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                align-items: center;
+                align-items: flex-start;
                 margin: 16px 16px 0 16px;
                 svg {
                     cursor: pointer;
@@ -34,9 +35,11 @@
                 }
                 .cart__total {
                     margin: 0 8px;
+                    user-select: none;
                 }
             }
             .cart__price {
+                font-weight: bold;
                 align-items: center;
                 display: flex;
             }
@@ -50,6 +53,9 @@
         margin-bottom: 32px;
         button {
             margin-right: 16px;
+        }
+        span {
+            font-weight: bold;
         }
     }
 }

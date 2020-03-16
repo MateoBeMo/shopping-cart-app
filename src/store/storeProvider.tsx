@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer } from 'react';
-import { initialState, globalStateReducer, globalState, actionTypes } from './globalSlider';
+import { initialState, globalStateReducer, globalState, actionTypes } from './globalStore';
 
 type ContextTypes = {
     state: globalState;

@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 /**Components */
 import Switcher from '../Switcher';
 /**Testing library */
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-const checked = true;
-const onChange = jest.fn();
-const switcherName = 'switcher-test';
+const onChangeMock = jest.fn();
+
+type SwitcherProps = {
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    checked: boolean;
+    switcherName: string;
+};
+
+const renderSwitcher = (props: Partial<SwitcherProps> = {}) => {
+    const defaultProps: SwitcherProps = {
+        onChange: onChangeMock,
+        checked: true,
+        switcherName: 'switcher-test',
+    };
+    return render(<Switcher {...defaultProps} {...props} />);
+};
 
 describe('<Switcher>', () => {
     afterEach(() => {
@@ -15,32 +28,32 @@ describe('<Switcher>', () => {
     });
 
     test('Snapshot renders => it should rendered with the provided props', () => {
-        const { container } = render(<Switcher onChange={onChange} checked={checked} switcherName={switcherName} />);
+        const { container } = renderSwitcher();
 
         expect(container).toMatchSnapshot();
     });
 
     test('It should fire onChange event on click over element', () => {
-        const { getByTestId } = render(<Switcher onChange={onChange} checked={checked} switcherName={switcherName} />);
+        const { getByTestId } = renderSwitcher();
 
         const inputCheckbox = getByTestId('switcher__input__checkbox-test');
 
         fireEvent.click(inputCheckbox);
 
-        expect(onChange).toHaveBeenCalled();
-        expect(onChange).toHaveBeenCalledTimes(1);
+        expect(onChangeMock).toHaveBeenCalled();
+        expect(onChangeMock).toHaveBeenCalledTimes(1);
     });
 
     test('It should get checked prop', () => {
-        const { getByTestId } = render(<Switcher onChange={onChange} checked={checked} switcherName={switcherName} />);
+        const { getByTestId } = renderSwitcher();
 
         const checkbox = getByTestId('switcher__input__checkbox-test');
 
-        expect(checkbox.checked).toEqual(true);
+        expect(checkbox).toHaveAttribute('checked', '');
     });
 
     test('should not have basic accessibility issues', async () => {
-        const { container } = render(<Switcher onChange={onChange} checked={checked} switcherName={switcherName} />);
+        const { container } = renderSwitcher();
         const results = await axe(container);
         expect(results).toHaveNoViolations();
     });

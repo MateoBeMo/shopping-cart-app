@@ -1,10 +1,9 @@
 import React from 'react';
 import Cart from 'components/Cart';
-import { ProductModel, CartProductModel } from 'models/product.model';
+import { ProductModel } from 'models/product.model';
 import { updateItemStock } from 'services/product.service';
 import { useStore } from 'store/storeProvider';
-import { removeProduct } from 'store/globalSlider';
-import { removeProductsStorage } from 'utils/localStorageHelpers';
+import { removeProduct, updateProduct, removeAllProducts } from 'store/globalStore';
 import '../../homePage.scss';
 
 
@@ -18,21 +17,23 @@ const Sidebar = ({setRefreshProducts}: SidebarProps) => {
     const handleRemoveItem = (product: ProductModel) => {
         dispatch(removeProduct(product));
     };
-    const handleCheckout = async (products: CartProductModel[]) => {
+    const handleCheckout = async (products: ProductModel[]) => {
         await Promise.all(
             products.map(product => {
-                product.stock -= product.total;
-                delete product.total;
+                product.stock -= product.total || 1;
                 return updateItemStock(product);
             }),
         );
-        removeProductsStorage();
+        dispatch(removeAllProducts());
         setRefreshProducts();
+    };
+    const handleUpdateItem = (product: ProductModel) => {
+        dispatch(updateProduct(product));
     };
     return (
         <div className="sidebar__wrapper">
             <div className="sidebar__title">CART</div>
-            <Cart products={state.cartProducts} handleRemoveItem={handleRemoveItem} handleCheckout={handleCheckout}></Cart>
+            <Cart products={state.cartProducts} handleRemoveItem={handleRemoveItem} handleCheckout={handleCheckout} handleUpdateItem={handleUpdateItem}></Cart>
         </div>
     );
 };

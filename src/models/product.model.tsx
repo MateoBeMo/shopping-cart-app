@@ -6,8 +6,5 @@ export type ProductModel = {
     price: number;
     productDescription: string;
     favorite: string;
+    total?: number;
 }
-
-export type CartProductModel = ProductModel & {
-    total: number;
-};

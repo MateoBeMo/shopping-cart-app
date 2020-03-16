@@ -1,10 +1,12 @@
 import { produce } from 'immer';
 import { ProductModel } from 'models/product.model';
-import { getProductsStorage, setProductsStorage } from 'utils/localStorageHelpers';
+import { getProductsStorage, setProductsStorage, removeProductsStorage } from 'utils/localStorageHelpers';
 
 /** Constants */
 const ADD_PRODUCT = 'ADD_PRODUCT';
+const UPDATE_PRODUCT = 'UPDATE_PRODUCT';
 const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
+const REMOVE_ALL_PRODUCTS = 'REMOVE_ALL_PRODUCTS';
 const CHANGE_THEME = 'CHANGE_THEME';
 
 /** Types */
@@ -28,10 +30,24 @@ export const addProduct = (product: ProductModel) => {
     };
 };
 
+export const updateProduct = (product: ProductModel) => {
+    return {
+        type: UPDATE_PRODUCT,
+        payload: product,
+    };
+};
+
 export const removeProduct = (product: ProductModel) => {
     return {
         type: REMOVE_PRODUCT,
         payload: product,
+    };
+};
+
+export const removeAllProducts = () => {
+    return {
+        type: REMOVE_ALL_PRODUCTS,
+        payload: {}
     };
 };
 
@@ -54,17 +70,30 @@ export const globalStateReducer = (state = initialState, action: actionTypes): g
     produce(state, draft => {
         switch (action.type) {
             case ADD_PRODUCT:
-                if(!draft.cartProducts.some(product => product.id === action.payload.id)) {
+                if (!draft.cartProducts.some(product => product.id === action.payload.id)) {
                     draft.cartProducts.push(action.payload);
                 }
+                setProductsStorage(draft.cartProducts);
+                break;
+            case UPDATE_PRODUCT:
+                draft.cartProducts = draft.cartProducts.map(product => {
+                    if (product.id === action.payload.id) {
+                        product.total = action.payload.total;
+                    }
+                    return product;
+                });
                 setProductsStorage(draft.cartProducts);
                 break;
             case REMOVE_PRODUCT:
                 draft.cartProducts = draft.cartProducts.filter(product => product.id !== action.payload.id);
                 setProductsStorage(draft.cartProducts);
                 break;
+            case REMOVE_ALL_PRODUCTS:
+                draft.cartProducts = [];
+                removeProductsStorage();
+                break;
             case CHANGE_THEME:
-                document.body.className = "";
+                document.body.className = '';
                 document.body.classList.add(action.payload);
                 draft.theme = action.payload;
                 break;

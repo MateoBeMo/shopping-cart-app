@@ -1,3 +1,5 @@
+@import 'styles/styles-utils.scss';
+
 .productCard__wrapper {
     display: flex;
     flex-direction: column;
@@ -16,7 +18,9 @@
             width: 100%;
             height: 180px;
             border-bottom: 1px solid #999;
-            border-radius: 0.3em;
+            border-top-left-radius: 0.3em;
+            border-top-right-radius: 0.3em;
+            object-fit: cover;
         }
         .productCard__favorite {
             cursor: pointer;
@@ -45,6 +49,9 @@
         .productCard__title {
             display: flex;
             justify-content: space-between;
+            & span:last-child {
+                font-weight: 525;
+            }
         }
         .productCard__description {
             white-space: nowrap;
@@ -55,8 +62,13 @@
         .productCard__footer {
             display: flex;
             justify-content: space-between;
+            span {
+                color: gray;
+            }
             .productCard__button {
                 cursor: pointer;
+                padding: 8px 10px;
+                border-radius: 1.5em;
                 &--disabled {
                     border: 1px solid #999999;
                     background-color: #cccccc;
@@ -71,9 +83,6 @@
 .skeleton__wrapper {
     border: none;
     box-shadow: none;
-    .skeleton__header {
-        border: 1px solid #ddd;
-    }
 }
 
 .skeleton__line {
