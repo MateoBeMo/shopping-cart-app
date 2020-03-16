@@ -9,7 +9,7 @@ Original Create React App README available [here](./README_CRA.md)
 -   node 12.xx.x
 -   npm 6.x.x
 
-## How to run the API server locally.
+## How to run the API server locally
 
 Go to the server-api directory and run the `npm start` script, this will raise a [full fake REST API](https://www.npmjs.com/package/json-server) on port 3000.
 
