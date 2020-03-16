@@ -5,6 +5,7 @@
 $themes: (
     light: (
         bodyBackgroundColor: $color-background-light-2,
+        skeletonBackgroundGradient: linear-gradient(-90deg, $color-background-light-3 0%, $color-background-light-4 50%, $color-background-light-3 100%),
         headerFooterColor: $color-layout-elements-light,
         alertColor: $color-system-feedback-error,
         warningColor: $color-system-feedback-warning,
@@ -16,6 +17,7 @@ $themes: (
     ),
     dark: (
         bodyBackgroundColor: $color-background-dark-4,
+        skeletonBackgroundGradient: linear-gradient(-90deg, $color-background-dark-3 0%, $color-background-dark-4 50%, $color-background-dark-3 100%),
         headerFooterColor: $color-layout-elements-dark,
         alertColor: $color-system-feedback-error,
         warningColor: $color-system-feedback-warning,

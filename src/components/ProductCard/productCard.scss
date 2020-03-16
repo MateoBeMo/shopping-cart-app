@@ -45,6 +45,7 @@
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
+        width: 100%;
         padding: 8px 16px;
         .productCard__title {
             display: flex;
@@ -57,7 +58,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            width: 280px;
+            max-width: 280px;
         }
         .productCard__footer {
             display: flex;
@@ -81,6 +82,22 @@
             }
         }
     }
+    @media only screen and (max-width: 768px) {
+        width: 250px;
+        height: 250px;
+        .productCard__header {
+            min-height: 150px !important;
+            .productCard__image {
+                height: 150px !important;
+            }
+        }
+        .productCard__description {
+            display: none !important;
+        }
+        .productCard__favorite {
+            left: 225px !important;
+        }
+    }
 }
 
 .skeleton__wrapper {
@@ -91,7 +108,9 @@
 .skeleton__line {
     height: 100%;
     width: 100%;
-    background: linear-gradient(-90deg, #ddd 0%, #eee 50%, #ddd 100%);
+    @include themify($themes) {
+        background: themed('skeletonBackgroundGradient');
+    }
     background-size: 400% 400%;
     animation: pulse 1.2s ease-in-out infinite;
     @keyframes pulse {
