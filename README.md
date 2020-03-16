@@ -10,7 +10,7 @@ Original Create React App README available [here](./README_CRA.md)
 -   npm 6.x.x
 
 ## How to run the API server locally
-1. Install `json-server` globally: ``` npm i -g json-server ````
+1. Install `json-server` globally: `npm i -g json-server`
 2. Go to the server-api directory and run the `npm start` script, this will raise a [full fake REST API](https://www.npmjs.com/package/json-server) on port 3000.
 
 ## Available scripts
