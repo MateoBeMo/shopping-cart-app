@@ -8,6 +8,7 @@ Original Create React App README available [here](./README_CRA.md)
 
 -   node 12.xx.x
 -   npm 6.x.x
+-   `npm i -g cross-env`
 
 ## How to run the API server locally
 1. Install `json-server` globally: `npm i -g json-server`
